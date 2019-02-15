@@ -1,10 +1,113 @@
 <html>
 <head>
     <title>Assignment 02</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="static/main.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="static/favicon.ico">
 </head>
+
 <body>
-    <h1>Crowd AI - Assignment 02</h1>
-    <img src="images/01_3694350550.jpg">
-    <img src="images/02_3691598980.jpg">
+    <h1 id="title">Write a Short Story Based on a Photo Sequence</h1>
+
+    <div class="container instruction_panel" id="instruction_1">
+        <div>
+            In this task, there are <strong>two steps</strong> and in the end you will need to write <strong>a short story (about 5 sentences)</strong> based on the following photo sequence.
+        </div>
+        <h4>Step 1</h4>
+        <ul>
+            <li>Please <strong>watch the following images</strong> carefully for <strong>15</strong> seconds.</li>
+            <li>Feel free to click the thumbnail to see the large photo.</li>
+        </ul>
+        <div class="center">
+            <button type="button" class="btn btn-info btn-block" id="go_btn">GO</button>
+        </div>
+    </div>
+
+    <div class="container task_panel" id="step1_panel">
+        <div id="display_box">
+            <img src="images/01_3694350550.jpg" id="display_img">
+        </div>
+        <div class="img_group">
+            <div class="img_wrapper img_wrapper_func img_wrapper_active" im_id="images/01_3694350550.jpg">
+                <img src="images/01_3694350550.jpg" class="small_img">
+                <p class="image_text">1</p>
+            </div>
+            <div class="img_wrapper img_wrapper_func" im_id="images/02_3691598980.jpg">
+                <img src="images/02_3691598980.jpg" class="small_img">
+                <p class="image_text">2</p>
+            </div>
+            <div class="img_wrapper img_wrapper_func" im_id="images/03_3694351198.jpg">
+                <img src="images/03_3694351198.jpg" class="small_img">
+                <p class="image_text">3</p>
+            </div>
+            <div class="img_wrapper img_wrapper_func" im_id="images/04_3690803821.jpg">
+                <img src="images/04_3690803821.jpg" class="small_img">
+                <p class="image_text">4</p>
+            </div>
+            <div class="img_wrapper img_wrapper_func" im_id="images/05_3694352398.jpg">
+                <img src="images/05_3694352398.jpg" class="small_img">
+                <p class="image_text">5</p>
+            </div>                        
+        </div>
+        <div class="center">
+            <button type="button" class="btn btn-secondary btn-block" disabled id="next_step_btn">Next Step</button>
+        </div>
+    </div>
+
+    <div class="container instruction_panel" id="instruction_2">
+        <h4>Step 2</h4>
+        <ul>
+            <li>Please write <strong>about 5 sentences</strong> and <strong> more than 80 words.</strong></li>
+            <li>Feel free to go back to Step 1 to see the large image.</li>
+        </ul>
+        <div class="center">
+            <button type="button" class="btn btn-info btn-block" id="go_btn_2">GO</button>
+        </div>
+    </div>
+
+    <div class="container task_panel" id="step2_panel">
+        <div class="img_group">
+            <div class="img_wrapper">
+                <img src="images/01_3694350550.jpg" class="small_img">
+                <p class="image_text">1</p>
+            </div>
+            <div class="img_wrapper">
+                <img src="images/02_3691598980.jpg" class="small_img">
+                <p class="image_text">2</p>
+            </div>
+            <div class="img_wrapper">
+                <img src="images/03_3694351198.jpg" class="small_img">
+                <p class="image_text">3</p>
+            </div>
+            <div class="img_wrapper">
+                <img src="images/04_3690803821.jpg" class="small_img">
+                <p class="image_text">4</p>
+            </div>
+            <div class="img_wrapper">
+                <img src="images/05_3694352398.jpg" class="small_img">
+                <p class="image_text">5</p>
+            </div>                        
+        </div>
+
+        <form id="mturk_form" name="mturk_form" onsubmit="return validateForm()">
+            <div class="input-group" id="story_box">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Story</span>
+                </div>
+                <textarea class="form-control" id="story" aria-label="With textarea" required minlength="80"></textarea>
+            </div>
+            <div id="info_box">
+                <span>Current Word Count: <span class="count below" id="word_count">0</span></span>
+                <span>Current Sentence Count: <span class="count below" id="sent_count">0</span></span>
+            </div>
+            <div class="center">
+                <input type="submit" value="Submit" class="btn btn-secondary btn-block" disabled id="submit_btn">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
