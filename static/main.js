@@ -97,8 +97,12 @@ $(document).ready(function() {
 
 
     // is assigntmentId is a URL parameter
-    if((aid = gup("assignment_id"))!="" && $(form_selector).length>0) {
+    console.log("hahahahahahahahaha");
+    console.log(gup("assignment_id"));
+    console.log("hahahahahahahahaha");
 
+    if((aid = gup("assignment_id"))!="" && $(form_selector).length>0) {
+        console.log("hahahahahahahahaha!!!!!!!!!!!!!!!!!!!!!!");
         // If the HIT hasn't been accepted yet, disabled the form fields.
         if(aid == "ASSIGNMENT_ID_NOT_AVAILABLE") {
             $('input,textarea,select').attr("DISABLED", "disabled");
