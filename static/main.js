@@ -98,6 +98,7 @@ $(document).ready(function() {
 
     // is assigntmentId is a URL parameter
     console.log("hahahahahahahahaha");
+    console.log(window.location.href);
     console.log(gup("assignment_id"));
     console.log($(form_selector));
     console.log("hahahahahahahahaha");
