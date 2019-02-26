@@ -104,10 +104,10 @@ $(document).ready(function() {
             $('input,textarea,select').attr("DISABLED", "disabled");
         }
 
-        // Add a new hidden input element with name="assignmentId" that
-        // with assignmentId as its value.
+        // Add a new hidden input element with name="assignment_id" that
+        // with assignment_id as its value.
         // var aid_input = $("<input type='hidden' name='assignment_id' value='" + aid + "'>").appendTo($(form_selector));
-        $("#mturk-assignmentId").val(aid);
+        $("#mturk-assignment_id").val(aid);
 
         // Make sure the submit form's method is POST
         $(form_selector).attr('method', 'POST');
@@ -138,21 +138,21 @@ function validateForm() {
 }
 
 function submitToTurk(){
-    if(gup("assignmentId")!="") {
+    if(gup("assignment_id")!="") {
 
-        var jobkey = gup("assignmentId");
+        var jobkey = gup("assignment_id");
         if(gup("hitId")!="") {
             jobkey += "|" + gup("hitId");
         }
 
-        if(gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
+        if(gup("assignment_id") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
             $('input').attr("DISABLED", "true");
             _allowSubmit = false;
         } else {
             _allowSubmit = true;
         }
         
-        $('#mturk-assignmentId').attr('value', gup("assignmentId"));
+        $('#mturk-assignment_id').attr('value', gup("assignment_id"));
         $("#mturk_form").attr('method', 'POST');
     
         if(gup("turkSubmitTo")!="") {
