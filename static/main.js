@@ -134,24 +134,5 @@ function gup(name) {
 }
 
 function validateForm() {
-    return submitToTurk();
-}
-
-function submitToTurk(){
-    if(gup("assignment_id")!="") {
-
-        var jobkey = gup("assignment_id");
-
-        if(gup("assignment_id") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
-            $('input').attr("DISABLED", "true");
-            _allowSubmit = false;
-        } else {
-            _allowSubmit = true;
-        }
-        
-        $('#mturk-assignment_id').attr('value', gup("assignment_id"));
-        $("#mturk_form").attr('method', 'POST');
-    }
-    
     return true;
 }
