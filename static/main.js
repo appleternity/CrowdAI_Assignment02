@@ -99,6 +99,7 @@ $(document).ready(function() {
     // is assigntmentId is a URL parameter
     console.log("hahahahahahahahaha");
     console.log(gup("assignment_id"));
+    console.log($(form_selector));
     console.log("hahahahahahahahaha");
 
     if((aid = gup("assignment_id"))!="" && $(form_selector).length>0) {
