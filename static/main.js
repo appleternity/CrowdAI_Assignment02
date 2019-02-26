@@ -141,9 +141,6 @@ function submitToTurk(){
     if(gup("assignment_id")!="") {
 
         var jobkey = gup("assignment_id");
-        if(gup("hitId")!="") {
-            jobkey += "|" + gup("hitId");
-        }
 
         if(gup("assignment_id") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
             $('input').attr("DISABLED", "true");
@@ -154,10 +151,6 @@ function submitToTurk(){
         
         $('#mturk-assignment_id').attr('value', gup("assignment_id"));
         $("#mturk_form").attr('method', 'POST');
-    
-        if(gup("turkSubmitTo")!="") {
-            $("#mturk_form").attr('action', gup("turkSubmitTo") + '/mturk/externalSubmit');
-        }
     }
     
     $("#mturk_form").submit();
