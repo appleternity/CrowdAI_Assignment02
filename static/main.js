@@ -153,6 +153,5 @@ function submitToTurk(){
         $("#mturk_form").attr('method', 'POST');
     }
     
-    $("#mturk_form").submit();
-    return false;
+    return true;
 }
