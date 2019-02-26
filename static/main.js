@@ -1,6 +1,6 @@
 $(document).ready(function() {
     /***************** Variables *************/
-    var lock_time = 1;
+    var lock_time = 15;
     var time_lock;
     var task_id;
     var current_btn = "#next_step_btn";
@@ -97,7 +97,7 @@ $(document).ready(function() {
 
 
     // is assigntmentId is a URL parameter
-    if((aid = gup("assignmentId"))!="" && $(form_selector).length>0) {
+    if((aid = gup("assignment_id"))!="" && $(form_selector).length>0) {
 
         // If the HIT hasn't been accepted yet, disabled the form fields.
         if(aid == "ASSIGNMENT_ID_NOT_AVAILABLE") {
@@ -106,7 +106,8 @@ $(document).ready(function() {
 
         // Add a new hidden input element with name="assignmentId" that
         // with assignmentId as its value.
-        var aid_input = $("<input type='hidden' name='assignmentId' value='" + aid + "'>").appendTo($(form_selector));
+        // var aid_input = $("<input type='hidden' name='assignment_id' value='" + aid + "'>").appendTo($(form_selector));
+        $("#mturk-assignmentId").val(aid);
 
         // Make sure the submit form's method is POST
         $(form_selector).attr('method', 'POST');
