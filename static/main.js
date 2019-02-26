@@ -1,6 +1,6 @@
 $(document).ready(function() {
     /***************** Variables *************/
-    var lock_time = 15;
+    var lock_time = 1;
     var time_lock;
     var task_id;
     var current_btn = "#next_step_btn";
