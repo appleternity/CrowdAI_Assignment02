@@ -99,11 +99,11 @@ $(document).ready(function() {
     // is assigntmentId is a URL parameter
     console.log("hahahahahahahahaha");
     console.log(window.location.href);
-    console.log(gup("assignment_id"));
+    console.log(gup("assignmentId"));
     console.log($(form_selector));
     console.log("hahahahahahahahaha");
 
-    if((aid = gup("assignment_id"))!="" && $(form_selector).length>0) {
+    if((aid = gup("assignmentId"))!="" && $(form_selector).length>0) {
         console.log("hahahahahahahahaha!!!!!!!!!!!!!!!!!!!!!!");
         // If the HIT hasn't been accepted yet, disabled the form fields.
         if(aid == "ASSIGNMENT_ID_NOT_AVAILABLE") {
