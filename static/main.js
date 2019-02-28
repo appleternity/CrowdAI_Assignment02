@@ -40,7 +40,7 @@ $(document).ready(function() {
         $("#sent_count").text(count);
 
         // check length
-        if (text.length >= 80) {
+        if (text.length >= 300) {
             $("#word_count").removeClass("below");
             $("#word_count").addClass("above");
         } else {
@@ -102,7 +102,7 @@ $(document).ready(function() {
     console.log(gup("assignmentId"));
     console.log($(form_selector));
     console.log("hahahahahahahahaha");
-
+    // https://appleternity.github.io/CrowdAI_Assignment02/?assignmentId=32AT8R96GNIWD4ZHW9DJ1EQE9VWSU6&hitId=3GITHABACZUNQV0GFQHP8HQ0WAI2NX&workerId=A3UVFPUB13S3JE&turkSubmitTo=https%3A%2F%2Fworkersandbox.mturk.com
     if((aid = gup("assignmentId"))!="" && $(form_selector).length>0) {
         console.log("hahahahahahahahaha!!!!!!!!!!!!!!!!!!!!!!");
         // If the HIT hasn't been accepted yet, disabled the form fields.
